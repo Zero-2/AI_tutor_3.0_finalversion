@@ -17,9 +17,12 @@ class_nums = 13
 maxlen = 60
 batch_size = 16
 
-config_path='E:/bert_weight_files/roberta/bert_config_rbt3.json'
-checkpoint_path='E:/bert_weight_files/roberta/bert_model.ckpt'
-dict_path = 'E:/bert_weight_files/roberta/vocab.txt'
+# config_path='E:/bert_weight_files/roberta/bert_config_rbt3.json'
+config_path='../wwm_uncased_L-24_H-1024_A-16/bert_config.json'
+checkpoint_path ='../wwm_uncased_L-24_H-1024_A-16/bert_model.ckpt'
+dict_path ='../wwm_uncased_L-24_H-1024_A-16/vocab.txt'
+# checkpoint_path='E:/bert_weight_files/roberta/bert_model.ckpt'
+# dict_path = 'E:/bert_weight_files/roberta/vocab.txt'
 
 tokenizer = Tokenizer(dict_path)
 class data_generator(DataGenerator):
@@ -45,56 +48,56 @@ class data_generator(DataGenerator):
 
 if __name__ == '__main__':
     # 加载数据集
-    train_data = load_data('./data/train.csv')
-    test_data = load_data('./data/test.csv')
-
-    # 转换数据集
-    train_generator = data_generator(train_data, batch_size)
-    test_generator = data_generator(test_data, batch_size)
-
+    # train_data = load_data('./data/train.csv')
+    # test_data = load_data('./data/test.csv')
+    #
+    # # 转换数据集
+    # train_generator = data_generator(train_data, batch_size)
+    # test_generator = data_generator(test_data, batch_size)
+    #
     model = build_bert_model(config_path,checkpoint_path,class_nums)
     print(model.summary())
-    model.compile(
-        loss='sparse_categorical_crossentropy',
-        optimizer=Adam(5e-6), 
-        metrics=['accuracy'],
-    )
-
-    earlystop = keras.callbacks.EarlyStopping(
-        monitor='val_loss', 
-        patience=3, 
-        verbose=2, 
-        mode='min'
-        )
+    # model.compile(
+    #     loss='sparse_categorical_crossentropy',
+    #     optimizer=Adam(5e-6),
+    #     metrics=['accuracy'],
+    # )
+    #
+    # earlystop = keras.callbacks.EarlyStopping(
+    #     monitor='val_loss',
+    #     patience=3,
+    #     verbose=2,
+    #     mode='min'
+    #     )
     bast_model_filepath = './checkpoint/best_model.weights'
-    '''
-        保存训练后的模型
-        bast_model_filepath: 保存模型的路径
-        monitor：被检测的数据 val_acc or val_loss
-        verbose: 详细信息模式，0 或者1。0为不打印输出信息，1为打印
-        如果save_best_only=True，将只保存在验证集上性能最好的模型mode: {auto, min, max} 的其中之一
-    '''
-    checkpoint = keras.callbacks.ModelCheckpoint(
-        bast_model_filepath, 
-        monitor='val_loss', 
-        verbose=1, 
-        save_best_only=True,
-        mode='min'
-        )
-    '''
-        将数据导入，允许模型
-        steps_per_epoch: 每一个epoch 运行的次数
-        validation_data：验证集
-    '''
-    model.fit_generator(
-        train_generator.forfit(),
-        steps_per_epoch=len(train_generator),
-        epochs=10,
-        validation_data=test_generator.forfit(), 
-        validation_steps=len(test_generator),
-        shuffle=True, 
-        callbacks=[earlystop,checkpoint]
-    )
+    # '''
+    #     保存训练后的模型
+    #     bast_model_filepath: 保存模型的路径
+    #     monitor：被检测的数据 val_acc or val_loss
+    #     verbose: 详细信息模式，0 或者1。0为不打印输出信息，1为打印
+    #     如果save_best_only=True，将只保存在验证集上性能最好的模型mode: {auto, min, max} 的其中之一
+    # '''
+    # checkpoint = keras.callbacks.ModelCheckpoint(
+    #     bast_model_filepath,
+    #     monitor='val_loss',
+    #     verbose=1,
+    #     save_best_only=True,
+    #     mode='min'
+    #     )
+    # '''
+    #     将数据导入，允许模型
+    #     steps_per_epoch: 每一个epoch 运行的次数
+    #     validation_data：验证集
+    # '''
+    # model.fit_generator(
+    #     train_generator.forfit(),
+    #     steps_per_epoch=len(train_generator),
+    #     epochs=10,
+    #     validation_data=test_generator.forfit(),
+    #     validation_steps=len(test_generator),
+    #     shuffle=True,
+    #     callbacks=[earlystop,checkpoint]
+    # )
     # 把保存的权重加载进去
     model.load_weights(bast_model_filepath)
     test_pred = []
