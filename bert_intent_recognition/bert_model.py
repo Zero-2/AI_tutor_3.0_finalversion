@@ -83,5 +83,5 @@ def build_bert_model(config_path,checkpoint_path,class_nums):
 if __name__ == '__main__':
 	config_path='E:/bert_weight_files/bert_wwm/bert_config.json'
 	checkpoint_path='E:/bert_weight_files/bert_wwm/bert_model.ckpt'
-	class_nums=13
+	class_nums=11
 	build_bert_model(config_path, checkpoint_path, class_nums)

@@ -1,0 +1,243 @@
+What o
+is o
+cognitive B_entity
+science I_entity
+? o
+
+What o
+is o
+Machine B_entity
+Learning I_entity
+? o
+
+What o
+is o
+associative B_entity
+learning I_entity
+? o
+
+What o
+are o
+the o
+characteristics o
+of o
+good o
+AI B_entity
+applications o
+? o
+
+What o
+is o
+associative B_entity
+learning I_entity
+? o
+
+What o
+are o
+artificial B_entity
+neural I_entity
+networks I_entity
+? o
+
+How o
+can o
+weather B_entity
+forecast I_entity
+system o
+work o
+? o
+
+How o
+Human o
+Learn o
+? o
+
+How o
+does o
+feedforward B_entity
+backpropagation I_entity
+network I_entity
+for I_entity
+supervised I_entity
+learning I_entity
+work o
+? o
+
+How o
+does o
+Numerical B_entity
+Weather I_entity
+Prediction I_entity
+NWP o
+work o
+? o
+
+How o
+to o
+play o
+Go B_entity
+? o
+
+How o
+to o
+be o
+smarter o
+by o
+sleeping o
+? o
+
+Which o
+substance o
+does o
+neurons o
+process o
+? o
+
+How o
+do o
+signals o
+in o
+brain o
+be o
+transported o
+? o
+
+Which o
+operation o
+does o
+neural B_entity
+networks I_entity
+be o
+similar o
+to o
+? o
+
+Why o
+the o
+breakthrough o
+in o
+neural B_entity
+networks I_entity
+is o
+significant o
+? o
+
+How o
+to o
+create o
+the o
+learning B_entity
+capability I_entity
+of o
+an o
+artificial o
+neuron o
+? o
+
+How o
+to o
+tackle o
+optimization B_entity
+problems I_entity
+? o
+
+When o
+the o
+von B_entity
+Neumann I_entity
+Architecture I_entity
+was o
+invented o
+? o
+
+How o
+long o
+is o
+the o
+Go's o
+history o
+? o
+
+When o
+is o
+the o
+laboratory o
+research o
+on o
+reinforcent B_entity
+learning I_entity
+? o
+
+When o
+was o
+the o
+stain B_entity
+method I_entity
+invented o
+? o
+
+When o
+the o
+artificial B_entity
+neural I_entity
+networks I_entity
+was o
+appeared o
+? o
+
+When o
+is o
+the o
+first o
+golden o
+age o
+of o
+artificial B_entity
+neural I_entity
+networks I_entity
+? o
+
+Why o
+Hopfield B_entity
+Network I_entity
+is o
+important o
+? o
+
+Why o
+figure o
+ground o
+segmentation I_entity
+is o
+useful o
+? o
+
+Why o
+the o
+von B_entity
+Neumann I_entity
+Machine I_entity
+is o
+not o
+an o
+intelligent o
+machine I_entity
+? o
+
+Why o
+the o
+weather B_entity
+forecast I_entity
+system I_entity
+is o
+not o
+intelligent o
+? o
+
+Why o
+AlphaGo B_entity
+is o
+intelligent o
+? o
+
+Why o

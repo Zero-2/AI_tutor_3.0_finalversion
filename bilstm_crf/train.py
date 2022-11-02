@@ -5,25 +5,27 @@ from bilstm_crf_model import BiLstmCrfModel
 from crf_layer import CRF
 from data_helpers import NerDataProcessor
 
-max_len = 80
-vocab_size = 2410
+# 修改：8099 -》800
+max_len = 100
+# 修改2410 -> 1205
+vocab_size = 500
 embedding_dim = 200
 lstm_units = 128
 
 if __name__ == '__main__':
     ndp = NerDataProcessor(max_len,vocab_size)
     train_X,train_y = ndp.read_data(
-            "../../../ChineseBLUE/data/cMedQANER/train.txt",
+            "./data1/training_data.txt",
             is_training_data=True
         )
     train_X,train_y = ndp.encode(train_X,train_y)
     dev_X,dev_y = ndp.read_data(
-            "../../../ChineseBLUE/data/cMedQANER/dev.txt",
+            "./data1/dev_data.txt",
             is_training_data=False
         )
     dev_X,dev_y = ndp.encode(dev_X,dev_y)
     test_X,test_y = ndp.read_data(
-            "../../../ChineseBLUE/data/cMedQANER/test.txt",
+            "./data1/testing_data.txt",
             is_training_data=False
         )
     test_X,test_y = ndp.encode(test_X,test_y)
@@ -50,8 +52,9 @@ if __name__ == '__main__':
     reduce_lr = keras.callbacks.ReduceLROnPlateau(
         monitor='val_loss', 
         factor=0.5, 
-        patience=4, 
-        verbose=1)
+        patience=4,
+        # 修改 1-》2
+        verbose=2)
 
     earlystop = keras.callbacks.EarlyStopping(
         monitor='val_loss', 
@@ -62,8 +65,9 @@ if __name__ == '__main__':
     bast_model_filepath = './checkpoint/best_bilstm_crf_model.h5'
     checkpoint = keras.callbacks.ModelCheckpoint(
         bast_model_filepath, 
-        monitor='val_loss', 
-        verbose=1, 
+        monitor='val_loss',
+        #  修改 1 -》 2
+        verbose=2,
         save_best_only=True,
         mode='min'
         )

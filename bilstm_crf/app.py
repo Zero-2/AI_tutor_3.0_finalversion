@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 import json
-import flask
+# import flask
 import pickle
 import ahocorasick
 import numpy as np
@@ -130,21 +130,21 @@ model = MedicalNerModel()
 
 
 if __name__ == '__main__':
-    app = flask.Flask(__name__)
-
-    @app.route("/service/api/medical_ner",methods=["GET","POST"])
-    def medical_ner():
-        data = {"sucess":0}
-        result = []
-        text_list = flask.request.get_json()["text_list"]
-        with graph.as_default():
-            set_session(sess)
-            result = model.predict(text_list)
-
-        data["data"] = result
-        data["sucess"] = 1
-
-        return flask.jsonify(data)
+    # app = flask.Flask(__name__)
+    #
+    # @app.route("/service/api/medical_ner",methods=["GET","POST"])
+    # def medical_ner():
+    #     data = {"sucess":0}
+    #     result = []
+    #     text_list = flask.request.get_json()["text_list"]
+    #     with graph.as_default():
+    #         set_session(sess)
+    #         result = model.predict(text_list)
+    #
+    #     data["data"] = result
+    #     data["sucess"] = 1
+    #
+    #     return flask.jsonify(data)
 
     server = pywsgi.WSGIServer(("0.0.0.0",60061), app)
     server.serve_forever()

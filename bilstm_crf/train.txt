@@ -1,0 +1,2436 @@
+What o
+is o
+cognitive B_entity
+science I_entity
+? o
+
+What o
+is o
+Machine B_entity
+Learning I_entity
+? o
+
+What o
+is o
+associative B_entity
+learning I_entity
+? o
+
+What o
+are o
+the o
+characteristics o
+of o
+good o
+AI B_entity
+applications o
+? o
+
+What o
+is o
+associative B_entity
+learning I_entity
+? o
+
+What o
+are o
+artificial B_entity
+neural I_entity
+networks I_entity
+? o
+
+How o
+can o
+weather B_entity
+forecast I_entity
+system o
+work o
+? o
+
+How o
+Human o
+Learn o
+? o
+
+How o
+does o
+feedforward B_entity
+backpropagation I_entity
+network I_entity
+for I_entity
+supervised I_entity
+learning I_entity
+work o
+? o
+
+How o
+does o
+Numerical B_entity
+Weather I_entity
+Prediction I_entity
+NWP o
+work o
+? o
+
+How o
+to o
+play o
+Go B_entity
+? o
+
+How o
+to o
+be o
+smarter o
+by o
+sleeping o
+? o
+
+Which o
+substance o
+does o
+neurons o
+process o
+? o
+
+How o
+do o
+signals o
+in o
+brain o
+be o
+transported o
+? o
+
+Which o
+operation o
+does o
+neural B_entity
+networks I_entity
+be o
+similar o
+to o
+? o
+
+Why o
+the o
+breakthrough o
+in o
+neural B_entity
+networks I_entity
+is o
+significant o
+? o
+
+How o
+to o
+create o
+the o
+learning B_entity
+capability I_entity
+of o
+an o
+artificial o
+neuron o
+? o
+
+How o
+to o
+tackle o
+optimization B_entity
+problems I_entity
+? o
+
+When o
+the o
+von B_entity
+Neumann I_entity
+Architecture I_entity
+was o
+invented o
+? o
+
+How o
+long o
+is o
+the o
+Go's o
+history o
+? o
+
+When o
+is o
+the o
+laboratory o
+research o
+on o
+reinforcent B_entity
+learning I_entity
+? o
+
+When o
+was o
+the o
+stain B_entity
+method I_entity
+invented o
+? o
+
+When o
+the o
+artificial B_entity
+neural I_entity
+networks I_entity
+was o
+appeared o
+? o
+
+When o
+is o
+the o
+first o
+golden o
+age o
+of o
+artificial B_entity
+neural I_entity
+networks I_entity
+? o
+
+Why o
+Hopfield B_entity
+Network I_entity
+is o
+important o
+? o
+
+Why o
+figure o
+ground o
+segmentation I_entity
+is o
+useful o
+? o
+
+Why o
+the o
+von B_entity
+Neumann I_entity
+Machine I_entity
+is o
+not o
+an o
+intelligent o
+machine I_entity
+? o
+
+Why o
+the o
+weather B_entity
+forecast I_entity
+system I_entity
+is o
+not o
+intelligent o
+? o
+
+Why o
+AlphaGo B_entity
+is o
+intelligent o
+? o
+
+Why o
+brain B_entity
+science I_entity
+is o
+improtant o
+for o
+AI o
+? o
+
+What o
+is o
+cognitive B_entity
+science I_entity
+? o
+
+What o
+is o
+Data B_entity
+Mining I_entity
+? o
+
+Why o
+Data B_entity
+Mining I_entity
+Becomes o
+So o
+Important o
+? o
+
+Why o
+Data B_entity
+Mining I_entity
+Becomes o
+So o
+Important o
+? o
+
+What o
+is o
+knowledge B_entity
+discovery I_entity
+process I_entity
+? o
+
+What o
+is o
+data B_entity
+processing I_entity
+? o
+
+What o
+is o
+data B_entity
+cleaning I_entity
+? o
+
+What o
+is o
+data B_entity
+integration I_entity
+? o
+
+How o
+to o
+achieve o
+data B_entity
+integration I_entity
+? o
+
+How o
+to o
+achieve o
+data B_entity
+integration I_entity
+? o
+
+How o
+to o
+achieve o
+data B_entity
+integration I_entity
+? o
+
+How o
+to o
+achieve o
+data B_entity
+integration I_entity
+? o
+
+How o
+to o
+achieve o
+data B_entity
+integration I_entity
+? o
+
+What o
+is o
+data B_entity
+transformation I_entity
+? o
+
+How o
+to o
+achieve o
+data B_entity
+transformation I_entity
+? o
+
+How o
+to o
+achieve o
+data B_entity
+transformation I_entity
+? o
+
+What o
+is o
+data B_entity
+discretization I_entity
+? o
+
+Why o
+data B_entity
+binning I_entity
+so o
+important o
+? o
+
+How o
+to o
+achieve o
+data B_entity
+discretization I_entity
+? o
+
+How o
+to o
+achieve o
+data B_entity
+discretization I_entity
+? o
+
+What o
+is o
+data B_entity
+normalization I_entity
+? o
+
+What o
+is o
+artificial B_entity
+Neural I_entity
+Networks I_entity
+? o
+
+How o
+to o
+achieve o
+data B_entity
+normalization I_entity
+? o
+
+How o
+to o
+achieve o
+data B_entity
+normalization I_entity
+? o
+
+How o
+to o
+achieve o
+data B_entity
+normalization I_entity
+? o
+
+What o
+is o
+Financial B_entity
+analysis I_entity
+? o
+
+How o
+to o
+achieve o
+feature B_entity
+extraction I_entity
+? o
+
+How o
+to o
+achieve o
+feature B_entity
+extraction I_entity
+? o
+
+How o
+to o
+achieve o
+feature B_entity
+extraction I_entity
+? o
+
+What o
+is o
+data B_entity
+reduction I_entity
+? o
+
+How o
+to o
+achieve o
+data B_entity
+compression I_entity
+? o
+
+What o
+is o
+Linear B_entity
+and I_entity
+nonlinear I_entity
+regression I_entity
+? o
+
+What o
+is o
+Histograms B_entity
+clustering I_entity
+techniques I_entity
+? o
+
+What o
+is o
+Data B_entity
+cube I_entity
+aggregation I_entity
+technique I_entity
+? o
+
+What o
+is o
+dimensionality B_entity
+reduction I_entity
+? o
+
+What o
+is o
+e o
+mail o
+classification I_entity
+problem I_entity
+? o
+
+What o
+Wavelet B_entity
+transforms I_entity
+and I_entity
+principal I_entity
+components I_entity
+analysis I_entity
+includes o
+? o
+
+What o
+classification B_entity
+do o
+? o
+
+What o
+clustering B_entity
+do o
+? o
+
+What o
+is o
+association B_entity
+? o
+
+What o
+is o
+decision B_entity
+tree I_entity
+? o
+
+Why o
+decision B_entity
+tree I_entity
+so o
+important o
+? o
+
+What o
+is o
+Frequent B_entity
+Pattern I_entity
+Classification I_entity
+Technique I_entity
+? o
+
+What o
+is o
+clustering B_entity
+? o
+
+What o
+is o
+K o
+Nearest o
+Neighbor I_entity
+KNN o
+technique I_entity
+? o
+
+What o
+is o
+clustering B_entity
+? o
+
+What o
+is o
+K o
+Nearest o
+Neighbor I_entity
+KNN o
+technique I_entity
+? o
+
+What o
+is o
+regression B_entity
+? o
+
+Why o
+regression B_entity
+so o
+important o
+? o
+
+Why o
+classification B_entity
+so o
+important o
+? o
+
+What o
+is o
+linear B_entity
+regression I_entity
+? o
+
+What o
+is o
+itemset B_entity
+? o
+
+What o
+is o
+K o
+itemset o
+? o
+
+What o
+is o
+support o
+itemset o
+? o
+
+What o
+is o
+fraction B_entity
+support I_entity
+s o
+X o
+? o
+
+What o
+is o
+Frequent B_entity
+Pattern I_entity
+? o
+
+What o
+is o
+Association B_entity
+Rule I_entity
+? o
+
+How o
+to o
+achieve o
+association B_entity
+rule I_entity
+? o
+
+How o
+to o
+achieve o
+association B_entity
+rule I_entity
+mining I_entity
+? o
+
+What o
+is o
+Artificial B_entity
+neural I_entity
+networks I_entity
+? o
+
+What o
+is o
+Deep B_entity
+Neural I_entity
+Network I_entity
+? o
+
+Why o
+financial B_entity
+fraud I_entity
+detection I_entity
+so o
+important o
+? o
+
+Why o
+customer B_entity
+relationship I_entity
+management I_entity
+so o
+important o
+? o
+
+Why o
+drug B_entity
+discovery I_entity
+and I_entity
+toxicology I_entity
+so o
+important o
+? o
+
+Why o
+DNA B_entity
+sequencing I_entity
+and I_entity
+pattern I_entity
+discovery I_entity
+so o
+important o
+? o
+
+Who o
+was o
+the I_entity
+first o
+to o
+formulate o
+the I_entity
+mind o
+body o
+problem I_entity
+in I_entity
+the I_entity
+form I_entity
+in I_entity
+which o
+it o
+exists o
+today o
+? o
+
+Who o
+was o
+the o
+first o
+discussed o
+the o
+mind o
+body o
+dualism I_entity
+theory I_entity
+? o
+
+What o
+was o
+intelligent B_entity
+agent I_entity
+? o
+
+What o
+was o
+rational B_entity
+agent I_entity
+? o
+
+What o
+was o
+agent B_entity
+? o
+
+What o
+were o
+the o
+ten o
+basic B_entity
+requirements I_entity
+of I_entity
+a I_entity
+typical I_entity
+intelligent I_entity
+agent I_entity
+? o
+
+What o
+are o
+the o
+IA B_entity
+main I_entity
+characteristics I_entity
+? o
+
+How o
+to o
+achieve o
+goal o
+based o
+agents I_entity
+? o
+
+What o
+is o
+the o
+adaptive B_entity
+agents I_entity
+? o
+
+What o
+is o
+the o
+difference B_entity
+between I_entity
+IAs I_entity
+? o
+
+Why o
+the o
+GIA B_entity
+structural I_entity
+model I_entity
+is o
+called o
+a o
+general o
+model I_entity
+? o
+
+How o
+can o
+A o
+structural I_entity
+model I_entity
+describe o
+the o
+interaction o
+between o
+body o
+and o
+mind o
+? o
+
+What o
+is o
+the o
+four o
+tier o
+implementation o
+provided o
+by o
+UIC B_entity
+5G I_entity
+intelligent I_entity
+agent I_entity
+system I_entity
+framework I_entity
+? o
+
+How o
+does o
+application B_entity
+tier I_entity
+work o
+? o
+
+Which o
+aspects o
+do o
+application o
+tier o
+implement o
+UIC B_entity
+5G I_entity
+intelligent I_entity
+agent I_entity
+solution I_entity
+? o
+
+How o
+does o
+AI o
+learning o
+tier I_entity
+work o
+? o
+
+What o
+is o
+Agent B_entity
+security I_entity
+tier I_entity
+? o
+
+What o
+is o
+Agent B_entity
+infrastructure I_entity
+tier I_entity
+? o
+
+What o
+are o
+the o
+agent B_entity
+shoppers I_entity
+? o
+
+Which o
+technologies o
+can o
+agent o
+shoppers o
+be o
+integrated o
+with o
+? o
+
+What o
+are o
+the o
+six o
+main B_entity
+modules I_entity
+of I_entity
+agent I_entity
+shopper I_entity
+system I_entity
+framework I_entity
+? o
+
+What o
+is o
+the o
+difference B_entity
+about o
+agent I_entity
+shoppers I_entity
+compared o
+with o
+traditional I_entity
+online I_entity
+shopping I_entity
+
+What o
+is o
+Agent B_entity
+Negotiator I_entity
+? o
+
+What o
+are o
+the o
+main B_entity
+entities I_entity
+of I_entity
+Agent I_entity
+Negotiator I_entity
+? o
+
+How o
+does o
+Agent B_entity
+Weatherman I_entity
+work o
+? o
+
+What o
+are o
+the o
+five o
+main B_entity
+components I_entity
+of I_entity
+Agent I_entity
+Weatherman I_entity
+
+Why o
+financial B_entity
+engineering I_entity
+is o
+one o
+of o
+the o
+most o
+stimulating o
+topics o
+for o
+both o
+academia o
+and o
+financial B_entity
+community o
+? o
+
+What o
+challenges o
+did o
+we o
+meet o
+during o
+developing o
+agents o
+? o
+
+What o
+is o
+COSMOS B_entity
+trade o
+? o
+
+What o
+is o
+the o
+main o
+purpose o
+of o
+O2O B_entity
+Commerce I_entity
+? o
+
+What o
+is o
+the o
+role o
+of o
+transportation B_entity
+? o
+
+What o
+is o
+Intelligent B_entity
+transportation I_entity
+syste o
+? o
+
+What o
+is o
+the o
+application o
+of o
+Intelligent B_entity
+transportation I_entity
+syste o
+? o
+
+what o
+is o
+the B_entity
+fifth o
+generation o
+wireless I_entity
+technology I_entity
+5G o
+? o
+
+what o
+specifcations o
+drive o
+the B_entity
+fifth o
+generation o
+wireless I_entity
+technology I_entity
+5G o
+technology I_entity
+? o
+
+How o
+Intelligent B_entity
+Transportation I_entity
+System I_entity
+ITS o
+works o
+? o
+
+How o
+vehicle o
+to o
+vehicle o
+technology I_entity
+improve o
+road o
+safety o
+? o
+
+How o
+or B_entity
+vehicle o
+to o
+everything o
+works o
+? o
+
+How o
+is o
+5G B_entity
+and I_entity
+AI I_entity
+technology I_entity
+connected o
+with o
+smart o
+city o
+? o
+
+How o
+5G B_entity
+technology o
+will o
+be o
+applied o
+to o
+autonomous I_entity
+driving I_entity
+
+How o
+IoT B_entity
+of I_entity
+smart I_entity
+cities I_entity
+with o
+modern o
+5G o
+wireless o
+networks o
+and o
+AI o
+technology o
+will o
+be o
+like o
+? o
+
+Which o
+technologies o
+and o
+services o
+can o
+AI o
+provide o
+for o
+emergency I_entity
+response I_entity
+service I_entity
+? o
+
+which o
+technologies o
+does o
+the o
+success o
+of o
+ITS o
+technology o
+depend o
+on o
+? o
+
+Which o
+information o
+can o
+ITS o
+provide o
+for o
+citiziens o
+to o
+minimize o
+their o
+traffic o
+problems o
+? o
+
+Which o
+technologies o
+are o
+included o
+in o
+or B_entity
+vehicle o
+to o
+everything o
+? o
+
+when o
+was o
+the B_entity
+first o
+generation o
+mobile I_entity
+network o
+1G o
+created o
+? o
+
+when o
+was o
+the B_entity
+fourth o
+generation o
+mobile I_entity
+network o
+4G o
+created o
+? o
+
+when o
+was o
+the B_entity
+fourth o
+generation o
+mobile I_entity
+network o
+2G o
+created o
+? o
+
+when o
+was o
+the B_entity
+fourth o
+generation o
+mobile I_entity
+network o
+3G o
+created o
+? o
+
+When o
+was o
+the o
+idea o
+of o
+autnomous B_entity
+vehicles I_entity
+presented o
+? o
+
+Why o
+we o
+need o
+Intelligent B_entity
+Transportation I_entity
+System I_entity
+ITS o
+? o
+
+Why o
+we o
+need o
+5G I_entity
+and I_entity
+AI I_entity
+tevhnology o
+in o
+ITS I_entity
+? o
+
+Why o
+we o
+need o
+5G o
+and o
+Intelligent o
+Traffic o
+Management o
+Systems o
+? o
+
+Why o
+we o
+need o
+6G o
+in o
+Autonomous o
+Vehicles o
+Auto o
+Driving o
+? o
+
+Why o
+we o
+said o
+that o
+lot o
+will o
+soon o
+be o
+touted o
+as o
+the o
+next o
+major o
+digital o
+revolution o
+? o
+
+Why o
+we o
+need o
+the B_entity
+fifth o
+generation o
+wireless I_entity
+technology I_entity
+5G o
+? o
+
+What o
+is o
+V2V B_entity
+vehicle o
+to o
+vehicle o
+technology o
+? o
+
+What o
+is o
+V2X B_entity
+or o
+vehicle o
+to o
+everything o
+? o
+
+What o
+is o
+the B_entity
+Internet I_entity
+of I_entity
+Things I_entity
+? o
+
+What o
+is o
+the B_entity
+IoT I_entity
+ecosystem I_entity
+? o
+
+What o
+is o
+the o
+modern B_entity
+wearable I_entity
+technology I_entity
+? o
+
+What o
+is o
+the o
+ADAMM B_entity
+wearable I_entity
+technology I_entity
+? o
+
+What o
+is o
+the o
+Peritoneal B_entity
+dialysis I_entity
+? o
+
+What o
+is o
+the o
+Digital B_entity
+personal I_entity
+assistants I_entity
+or I_entity
+chatbots I_entity
+? o
+
+How o
+does o
+Internet o
+of o
+Things o
+work o
+? o
+
+How o
+does o
+Wearable B_entity
+Technology I_entity
+work o
+? o
+
+How o
+does o
+ADAMM o
+wearable B_entity
+technology I_entity
+work o
+? o
+
+How o
+does o
+Wearable B_entity
+Sweat o
+Sensor o
+Informs I_entity
+Athletes I_entity
+of I_entity
+Water I_entity
+and I_entity
+Electrolyte I_entity
+Loss I_entity
+work o
+? o
+
+How o
+does o
+Robot o
+assisted o
+Surgery I_entity
+work o
+? o
+
+What's o
+the o
+difference o
+between o
+Hemodialysis o
+and o
+Peritoneal B_entity
+dialysis I_entity
+? o
+
+What o
+are o
+the o
+developments o
+in o
+traditional B_entity
+health I_entity
+care I_entity
+? o
+
+What o
+can o
+the o
+Internet B_entity
+of I_entity
+Things I_entity
+be o
+used o
+for o
+? o
+
+What o
+are o
+the o
+applications o
+of I_entity
+the o
+Internet B_entity
+of I_entity
+Things I_entity
+? o
+
+What o
+are o
+the o
+applications o
+of I_entity
+the o
+Internet B_entity
+of I_entity
+Things I_entity
+in o
+our o
+daily o
+life o
+
+What o
+are o
+the o
+applications o
+of I_entity
+the o
+Internet B_entity
+of I_entity
+Things I_entity
+in o
+Home o
+automation o
+companies o
+
+Why o
+has o
+the o
+Internet B_entity
+of I_entity
+Things I_entity
+become o
+one o
+of I_entity
+the o
+most o
+important o
+technologies o
+in o
+our o
+daily o
+activities o
+
+What o
+is o
+the o
+Wearable B_entity
+Technology I_entity
+? o
+
+Can o
+you o
+give o
+some o
+examples o
+of o
+Modern o
+Wearable B_entity
+Technology I_entity
+? o
+
+What o
+are o
+the o
+developments o
+in o
+modern o
+wearable B_entity
+technology I_entity
+
+What o
+can o
+modern o
+wearable B_entity
+technology I_entity
+be o
+used o
+for o
+? o
+
+What o
+can o
+modern o
+wearable B_entity
+technology I_entity
+be o
+used o
+for o
+in o
+medical o
+care o
+? o
+
+Where o
+is o
+the o
+medical B_entity
+trends I_entity
+developing o
+from o
+? o
+
+What o
+makes o
+up o
+the o
+ADAMM B_entity
+wearable I_entity
+technology I_entity
+? o
+
+What o
+are o
+the o
+current B_entity
+applications o
+of o
+health I_entity
+AI I_entity
+wearable I_entity
+devices o
+
+What o
+can o
+a o
+health B_entity
+chatbots I_entity
+be o
+used o
+for o
+
+Can o
+you o
+give o
+an o
+example o
+of o
+a o
+health B_entity
+chatbots I_entity
+? o
+
+When o
+was o
+the o
+first o
+wireless B_entity
+electrocardiogram I_entity
+invented o
+? o
+
+Can o
+you o
+give o
+some o
+examples o
+of o
+smart B_entity
+health I_entity
+technologies o
+
+What o
+is o
+cognitive B_entity
+science I_entity
+? o
+
+When o
+does o
+the o
+Smart B_entity
+Education I_entity
+first o
+launched o
+? o
+
+Why o
+implemented o
+to o
+improve o
+the o
+Smart B_entity
+Education I_entity
+? o
+
+Which o
+country I_entity
+first o
+implemented o
+Smart B_entity
+Country I_entity
+Master I_entity
+Plan I_entity
+? o
+
+Which o
+technology o
+supported o
+Smart B_entity
+Education I_entity
+in o
+Singapore o
+? o
+
+When o
+did o
+the o
+Finnish o
+Board o
+of o
+Education I_entity
+implemented o
+a o
+smart B_entity
+education I_entity
+project o
+? o
+
+What o
+is o
+smart B_entity
+education I_entity
+? o
+
+What o
+is o
+the o
+goal o
+of o
+the o
+smart B_entity
+education I_entity
+
+What o
+is o
+the o
+smart B_entity
+education I_entity
+framework o
+proposed o
+by o
+Hwang o
+? o
+
+What o
+is o
+intelligent B_entity
+education I_entity
+defined o
+by o
+Korean o
+Intelligent B_entity
+Learn o
+ing o
+Forum o
+? o
+
+What o
+is o
+smart B_entity
+education I_entity
+defined o
+by o
+MEST o
+? o
+
+What o
+is o
+MEST B_entity
+smart o
+learning o
+and o
+education o
+model o
+? o
+
+What o
+is o
+S o
+in o
+the o
+MEST B_entity
+smart o
+learning o
+and o
+education o
+model o
+? o
+
+What o
+is o
+M o
+in o
+the o
+MEST B_entity
+smart o
+learning o
+and o
+education o
+model o
+? o
+
+What o
+is o
+A o
+in o
+the o
+MEST B_entity
+smart o
+learning o
+and o
+education o
+model o
+? o
+
+What o
+is o
+R o
+in o
+the o
+MEST B_entity
+smart o
+learning o
+and o
+education o
+model o
+? o
+
+What o
+is o
+T o
+in o
+the o
+MEST's o
+smart o
+learning o
+and o
+education o
+model o
+? o
+
+What o
+is o
+the o
+basis o
+of o
+smart B_entity
+education I_entity
+? o
+
+What o
+is o
+TEL B_entity
+used o
+to o
+? o
+
+What o
+is o
+one o
+to o
+one o
+TEL B_entity
+? o
+
+What o
+is o
+Multi o
+functional o
+learning o
+technology o
+used o
+to o
+? o
+
+What o
+is o
+wearable o
+technology I_entity
+? o
+
+What o
+is o
+Smart B_entity
+Education I_entity
+Framework o
+? o
+
+What o
+is o
+the o
+main o
+theme o
+of o
+smart B_entity
+education I_entity
+? o
+
+What o
+relations o
+between o
+smart B_entity
+learners o
+, o
+smart B_entity
+pedagogy o
+and o
+smart B_entity
+learning o
+environmrnt o
+? o
+
+What o
+is o
+the o
+purpose o
+of o
+smart B_entity
+enducation o
+? o
+
+What o
+is o
+the o
+framework o
+for o
+learning o
+in o
+the o
+21st o
+cen o
+tury o
+? o
+
+What o
+does o
+Jenkins o
+think o
+are o
+core o
+competencies o
+for o
+the o
+21st o
+century o
+
+What o
+can o
+comprehensive B_entity
+abilities o
+help o
+students o
+? o
+
+What o
+skills o
+does o
+information o
+and o
+technology o
+literacy o
+require o
+students o
+to o
+master o
+? o
+
+What o
+skills o
+does o
+creativity o
+and o
+innovation o
+skills o
+require o
+students o
+to o
+master o
+? o
+
+Why o
+can't o
+critical o
+thinking o
+and o
+study o
+skills o
+be o
+taught o
+independently o
+
+What o
+can o
+English B_entity
+Chatbox I_entity
+do o
+in o
+the o
+Pragmatic o
+Level o
+? o
+
+What o
+is o
+a o
+smart B_entity
+city I_entity
+? o
+
+What o
+is o
+one o
+of o
+the o
+standars o
+for I_entity
+smart I_entity
+cities I_entity
+? o
+
+What o
+are o
+indications B_entity
+in I_entity
+ISO I_entity
+37120 I_entity
+used o
+to o
+do o
+? o
+
+What o
+is o
+physical B_entity
+infrastructure I_entity
+? o
+
+What o
+is o
+ICT B_entity
+infrastructure o
+? o
+
+What o
+is o
+smart B_entity
+city I_entity
+infrastruture I_entity
+? o
+
+What o
+is o
+the o
+difference o
+between o
+smart B_entity
+infrastructure I_entity
+and I_entity
+classic I_entity
+infrastruture o
+? o
+
+What o
+is o
+city B_entity
+brain I_entity
+? o
+
+What o
+is o
+smart B_entity
+energy I_entity
+? o
+
+What o
+can o
+be o
+ICT B_entity
+used o
+to o
+do o
+? o
+
+What o
+is o
+smart B_entity
+health I_entity
+care I_entity
+? o
+
+What o
+is o
+sustainable B_entity
+transport I_entity
+system I_entity
+? o
+
+What o
+is o
+state o
+of o
+the o
+arts o
+technology I_entity
+? o
+
+What o
+are o
+sensors B_entity
+used o
+to o
+do o
+? o
+
+What o
+is o
+IoT B_entity
+framework I_entity
+
+What o
+is o
+big B_entity
+data I_entity
+? o
+
+What o
+are o
+some o
+examples o
+of o
+big B_entity
+data I_entity
+? o
+
+What o
+is o
+smart B_entity
+pole I_entity
+? o
+
+What o
+are o
+some o
+examples o
+of o
+smart B_entity
+pole I_entity
+? o
+
+What o
+is o
+smart B_entity
+house I_entity
+? o
+
+What o
+are o
+some o
+drawbacks o
+of o
+smart B_entity
+house I_entity
+? o
+
+What o
+are o
+some o
+examples o
+of o
+smart B_entity
+house I_entity
+? o
+
+What o
+is o
+smart B_entity
+campus I_entity
+? o
+
+What o
+is o
+the o
+difference o
+of o
+smart B_entity
+cities I_entity
+from o
+the o
+past o
+to o
+present o
+? o
+
+How o
+can o
+telemedicine B_entity
+save o
+lives o
+? o
+
+How o
+does o
+IoT B_entity
+work o
+? o
+
+How o
+can o
+big B_entity
+data I_entity
+be o
+generated o
+? o
+
+How o
+does o
+smart B_entity
+campus o
+process o
+and o
+store o
+large o
+data o
+volumes o
+to o
+operate o
+? o
+
+When o
+did o
+Chinese o
+government o
+establish o
+the B_entity
+commitment I_entity
+to I_entity
+smart I_entity
+cities I_entity
+? o
+
+Why o
+does o
+a o
+smart B_entity
+house I_entity
+appear o
+intelligent o
+? o
+
+What o
+is o
+cognitive B_entity
+science I_entity
+? o
+
+How o
+can o
+a o
+computer o
+to o
+be o
+called o
+intelligent o
+? o
+
+What o
+is o
+self o
+consciousness o
+
+What o
+kinds o
+of o
+problem o
+did o
+Chella o
+and o
+Manzotti o
+discuss o
+in I_entity
+consciousness B_entity
+in I_entity
+robot I_entity
+evaluation I_entity
+? o
+
+Why o
+we o
+need o
+to o
+understanding o
+biological B_entity
+consciousness I_entity
+? o
+
+Why o
+once o
+we o
+enter o
+the o
+traditional o
+GOFAC o
+framework o
+, o
+consciousness B_entity
+cannot o
+be o
+achieved o
+? o
+
+What o
+is o
+five o
+major o
+components o
+of o
+GOFAC o
+robot B_entity
+consciousness I_entity
+
+What o
+is o
+Functionalism B_entity
+? o
+
+What o
+is o
+robot B_entity
+consciousness I_entity
+? o
+
+What o
+kinds o
+of o
+problem o
+between o
+the o
+experience o
+of o
+phenomena o
+and o
+the o
+physical o
+attributes o
+? o
+
+What o
+is o
+intermediate B_entity
+level I_entity
+fallacy I_entity
+? o
+
+What o
+is o
+apparent B_entity
+consciousness I_entity
+
+What o
+does o
+GOFAC B_entity
+means o
+? o
+
+What o
+is o
+consciousness B_entity
+? o
+
+What o
+is o
+the o
+example o
+about o
+consciousness B_entity
+? o
+
+What o
+is o
+the o
+explanation o
+about o
+functionalism B_entity
+? o
+
+What o
+is o
+zombie B_entity
+? o
+
+What o
+part o
+dose o
+the o
+global B_entity
+workspace I_entity
+model I_entity
+have o
+? o
+
+What o
+kinds o
+of o
+steps o
+dose o
+global B_entity
+workspace I_entity
+model I_entity
+have o
+? o
+
+What o
+is o
+the o
+model B_entity
+of I_entity
+consciousness I_entity
+? o
+
+What o
+is o
+the o
+model B_entity
+which o
+based o
+on o
+adaptive o
+resonance o
+in o
+the o
+brain o
+consider o
+about o
+? o
+
+What o
+is o
+another o
+popular o
+method o
+in o
+GOFAC B_entity
+? o
+
+What o
+is o
+information B_entity
+? o
+
+How o
+we o
+can o
+calculate o
+its o
+capacity B_entity
+? o
+
+What o
+can o
+information B_entity
+do o
+? o
+
+What o
+is o
+the o
+meaning o
+of o
+information B_entity
+? o
+
+What o
+is o
+body B_entity
+? o
+
+What o
+is o
+the o
+different o
+between o
+washing o
+machine o
+and o
+anthropomorphic B_entity
+robots I_entity
+? o
+
+What o
+is o
+enaction B_entity
+? o
+
+How o
+to o
+explan o
+intermediate B_entity
+level I_entity
+? o
+
