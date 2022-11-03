@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 import json
-# import flask
+import flask
 import pickle
 import numpy as np
 from gevent import pywsgi
@@ -26,19 +26,16 @@ class BertIntentModel(object):
     def __init__(self):
         super(BertIntentModel, self).__init__()
         # 问题： 三个文件分别是什么东西？
-        # self.dict_path = 'E:/bert_weight_files/roberta/vocab.txt'
-        # self.config_path='E:/bert_weight_files/roberta/bert_config_rbt3.json'
-        # self.checkpoint_path='E:/bert_weight_files/roberta/bert_model.ckpt'
-        self.config_path = '../uncased_L-6_H-128_A-2/bert_config.json'
-        self.checkpoint_path = '../uncased_L-6_H-128_A-2/bert_model.ckpt'
-        self.dict_path = '../uncased_L-6_H-128_A-2/vocab.txt'
+        self.dict_path = 'E:/bert_weight_files/roberta/vocab.txt'
+        self.config_path='E:/bert_weight_files/roberta/bert_config_rbt3.json'
+        self.checkpoint_path='E:/bert_weight_files/roberta/bert_model.ckpt'
         #把所有的label都读进去
-        self.label_list = [line.strip() for line in open('./data/label1', 'r', encoding='utf8')]
+        self.label_list = [line.strip() for line in open('label','r',encoding='utf8')]
         self.id2label = {idx:label for idx,label in enumerate(self.label_list)}
 
         self.tokenizer = Tokenizer(self.dict_path)
-        self.model = build_bert_model(self.config_path,self.checkpoint_path,11)
-        self.model.load_weights('./checkpoint/best_model_test.weights')
+        self.model = build_bert_model(self.config_path,self.checkpoint_path,13)
+        self.model.load_weights('./checkpoint/best_model.weights')
 
     def predict(self,text):
         # tokenizer.encode 相当于把embedding
@@ -56,33 +53,27 @@ BIM = BertIntentModel()
 
 
 if __name__ == '__main__':
-    # app = flask.Flask(__name__)
-    #
-    # @app.route("/service/api/bert_intent_recognize",methods=["GET","POST"])
-    # def bert_intent_recognize():
-    #     data = {"sucess":0}
-    #     result = None
-    #     param = flask.request.get_json()
-    #     print(param)
-    #     text = param["text"]
-    #     with graph.as_default():
-    #         set_session(sess)
-    #         result = BIM.predict(text)
-    #
-    #     data["data"] = result
-    #     data["sucess"] = 1
-    #
-    #     return flask.jsonify(data)
-    #
-    # server = pywsgi.WSGIServer(("0.0.0.0",60062), app)
-    # server.serve_forever()
+    app = flask.Flask(__name__)
+
+    @app.route("/service/api/bert_intent_recognize",methods=["GET","POST"])
+    def bert_intent_recognize():
+        data = {"sucess":0}
+        result = None
+        param = flask.request.get_json()
+        print(param)
+        text = param["text"]
+        with graph.as_default():
+            set_session(sess)
+            result = BIM.predict(text)
+
+        data["data"] = result
+        data["sucess"] = 1
+
+        return flask.jsonify(data)
+
+    server = pywsgi.WSGIServer(("0.0.0.0",60062), app)
+    server.serve_forever()
 
 
-    r = BIM.predict("What is MEST's smart learning and education model?")
-    print(r)
-
-    r = BIM.predict("What does Jenkins think are core competencies for the 21st century？")
-    print(r)
-
-    r1 = BIM.predict("what is drawback with you？")
-    print(r1)
+    # r = BIM.predict("淋球菌性尿道炎的症状")
+    # print(r)

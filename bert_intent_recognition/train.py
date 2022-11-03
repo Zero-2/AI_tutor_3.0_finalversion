@@ -13,7 +13,7 @@ from bert_model import build_bert_model
 from data_helper import load_data
 
 #定义超参数和配置文件
-class_nums = 13
+class_nums = 11
 maxlen = 60
 batch_size = 16
 
@@ -48,56 +48,57 @@ class data_generator(DataGenerator):
 
 if __name__ == '__main__':
     # 加载数据集
-    # train_data = load_data('./data/train.csv')
-    # test_data = load_data('./data/test.csv')
-    #
-    # # 转换数据集
-    # train_generator = data_generator(train_data, batch_size)
-    # test_generator = data_generator(test_data, batch_size)
-    #
+    train_data = load_data('./data/train.csv')
+    test_data = load_data('./data/test.csv')
+
+    # 转换数据集
+    train_generator = data_generator(train_data, batch_size)
+    test_generator = data_generator(test_data, batch_size)
+
     model = build_bert_model(config_path,checkpoint_path,class_nums)
     print(model.summary())
-    # model.compile(
-    #     loss='sparse_categorical_crossentropy',
-    #     optimizer=Adam(5e-6),
-    #     metrics=['accuracy'],
-    # )
-    #
-    # earlystop = keras.callbacks.EarlyStopping(
-    #     monitor='val_loss',
-    #     patience=3,
-    #     verbose=2,
-    #     mode='min'
-    #     )
+
+    model.compile(
+        loss='sparse_categorical_crossentropy',
+        optimizer=Adam(5e-6),
+        metrics=['accuracy'],
+    )
+
+    earlystop = keras.callbacks.EarlyStopping(
+        monitor='val_loss',
+        patience=3,
+        verbose=2,
+        mode='min'
+        )
     bast_model_filepath = './checkpoint/best_model.weights'
-    # '''
-    #     保存训练后的模型
-    #     bast_model_filepath: 保存模型的路径
-    #     monitor：被检测的数据 val_acc or val_loss
-    #     verbose: 详细信息模式，0 或者1。0为不打印输出信息，1为打印
-    #     如果save_best_only=True，将只保存在验证集上性能最好的模型mode: {auto, min, max} 的其中之一
-    # '''
-    # checkpoint = keras.callbacks.ModelCheckpoint(
-    #     bast_model_filepath,
-    #     monitor='val_loss',
-    #     verbose=1,
-    #     save_best_only=True,
-    #     mode='min'
-    #     )
-    # '''
-    #     将数据导入，允许模型
-    #     steps_per_epoch: 每一个epoch 运行的次数
-    #     validation_data：验证集
-    # '''
-    # model.fit_generator(
-    #     train_generator.forfit(),
-    #     steps_per_epoch=len(train_generator),
-    #     epochs=10,
-    #     validation_data=test_generator.forfit(),
-    #     validation_steps=len(test_generator),
-    #     shuffle=True,
-    #     callbacks=[earlystop,checkpoint]
-    # )
+    '''
+        保存训练后的模型
+        bast_model_filepath: 保存模型的路径
+        monitor：被检测的数据 val_acc or val_loss
+        verbose: 详细信息模式，0 或者1。0为不打印输出信息，1为打印
+        如果save_best_only=True，将只保存在验证集上性能最好的模型mode: {auto, min, max} 的其中之一
+    '''
+    checkpoint = keras.callbacks.ModelCheckpoint(
+        bast_model_filepath,
+        monitor='val_loss',
+        verbose=1,
+        save_best_only=True,
+        mode='min'
+        )
+    '''
+        将数据导入，允许模型
+        steps_per_epoch: 每一个epoch 运行的次数
+        validation_data：验证集
+    '''
+    model.fit_generator(
+        train_generator.forfit(),
+        steps_per_epoch=len(train_generator),
+        epochs=10,
+        validation_data=test_generator.forfit(),
+        validation_steps=len(test_generator),
+        shuffle=True,
+        callbacks=[earlystop,checkpoint]
+    )
     # 把保存的权重加载进去
     model.load_weights(bast_model_filepath)
     test_pred = []
@@ -110,5 +111,5 @@ if __name__ == '__main__':
     print(set(test_true))
     print(set(test_pred))
 
-    target_names = [line.strip() for line in open('label','r',encoding='utf8')]
+    target_names = [line.strip() for line in open('data/label', 'r', encoding='utf8')]
     print(classification_report(test_true, test_pred,target_names=target_names))

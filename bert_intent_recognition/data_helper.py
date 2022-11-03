@@ -36,145 +36,124 @@ def gen_training_data(raw_data_path):
 
 
 def gen_sample_base_template():
-    explain_qwds = ['能否介绍一下','想了解','可以问一下','能否告知','如何理解','怎样解释','可以介绍','解释一下','解释解释']
-    howtodo_qwds = ['怎样才能','怎么做可以', '咋样','咋', '如何','如何才可以', '如何做', '怎样','采取什么措施', '什么手段可以','采取什么方法',\
-                    '什么方法能','怎么做','我该如何','我该咋样','我该怎样','']
-    relevance_qwds = ['并发症', '并发', '一起发生', '一并发生', '一起出现', '一并出现', '一同发生', '一同出现', '伴随发生', '伴随', '共现','其他病并发']
-    greet_qwds = ['你好，麻烦问一下','打扰问一下','','','您好','请问得了','请教一下','冒昧问一下','问一下','','如果得了','']
-    define_qwds = ['有什么定义？','定义的意思','的定义','是什么意思？','是啥意思','是啥？','的意思是什么','的介绍','的释义','解释','介绍']
-    department_qwds = ['属于什么科', '要看什么科', '可以挂什么科', '要挂什么科室','看什么医生','应该看啥医生','可以看啥科室','挂啥科','看啥科呢']
-    infect_qwds = ['会传染给其他人吗？','有传染性吗','能感染到其他人吗','是否会传染？','传染性强吗','会传给孩子吗','会传给老人吗','会传给孕妇吗',\
-                    '会人传人不？','易感人群是什么人','容易感染不','易发人群是哪些人','我会感染吗', '我会染上吗', '会让我得上吗','会传染给哪些人','什么人容易得']
-    cureprob_qwds = ['多大概率能治好？', '多大几率能治好', '治好希望大么？', '痊愈几率', '治愈概率几成', '治愈比例', '治好的可能性', '能治吗', '可治率多高？',\
-                     '可以治好吗', '能否治好','治愈率多高','能治好不']
-    check_qwds = ['需要做什么检查', '要检查啥项目？', '如何体检', '检查什么', '做啥体检呢？', '如何体检？','要做什么化验治疗吗','化验什么啊','做啥检查']
-    prevent_qwds = ['预防', '防范', '抵制', '抵御', '防止','躲避','逃避','避开','免得','逃开','避开','避掉','躲开','躲掉','绕开']
-    lasttime_qwds = ['的治疗周期', '要治多久', '治疗多长时间', '治疗多少时间', '治疗几天', '治愈需要几年', '治好要多少天', '要治几多时间', '得治疗几个小时',\
-                 '治好得多少年','要花多少时间治好','完全治愈要多久','治好要多久','治疗时间长吗','治疗周期？']
 
-    symptom_qwds = ['症状', '的症状', '的症状是什么', '表征是啥', '现象', '症候', '临床表现','病症表现', '病症是啥', '病症是啥']
-    # cause_qwds = ['原因','成因', '为什么', '怎么会', '怎样才', '咋样才', '怎样会', '如何会', '为啥', '为何', '如何才会', '怎么才会', '会导致', '会造成']
-    # food_qwds = ['饮食', '饮用', '吃', '食', '伙食', '膳食', '喝', '菜' ,'忌口', '补品', '保健品', '食谱', '菜谱', '食用', '食物','补品']
-    # drug_qwds = ['药', '药品', '用药', '胶囊', '口服液', '炎片']
-    # 
-    # cureway_qwds = ['怎么治疗', '如何医治', '怎么医治', '怎么治', '怎么医', '如何治', '医治方式', '疗法', '咋治', '怎么办', '咋办', '咋治']
-    # cure_qwds = ['治疗什么', '治啥', '治疗啥', '医治啥', '治愈啥', '主治啥', '主治什么', '有什么用', '有何用', '用处', '用途',
-                      # '有什么好处', '有什么益处', '有何益处', '用来', '用来做啥', '用来作甚', '需要', '要']
+    # definition
+    definition_explain_qwds = ["what is ","Could you tell me ","Can i ask ","Can you discribe ","May i ask ","what can you tell me ","How to describe "]
+    definition_qwds = ["the meaning of ","the difinition of ","the discription of ", "the portrait of ","the picture of "]
+
+    # developer
+    developer_explain_qwds =['Who ','which person ','which one']
+    developer_qwds = ['is the funder of ', 'setup the ','is the designer ', 'is the inventor ', "is the developer", "is the creator ",]
+
+    #different
+    different_explain_qwds = ['What is ','How is ','Is there a ','Is there any','Is the ','Are there a ','Are there any','Are the ']
+    different_qwds = ['the difference', 'the contrast ', 'the gap ', 'the seperation ' ]
+    different_connectives_qwds = ['between ','compare ','from ']
+
+    #drawback
+    drawback_explain_qwds = ['What are ', 'What is ', "Could you tell me ","Can i ask ","Can you discribe ","May i ask ","what can you tell me ","How to describe ",'Are there any']
+    drawback_qwds = ['the drawbacks of ', ' the disadvantages of ', 'the downsides of ', 'the shortcomings of ','the cons of ','']
+
+    #example
+    example_explain_qwds = ["Could you tell me ", "Can i ask ", "May i ask ", "Can you give me", 'Are there any',"Can you provide "," Can you show me ","Can you offer me ", "Can you point out "]
+    example_qwds = ["the example of ","the illustrate of ","the instance of ","the smaple of ","the case of "]
+
+    #method
+    method_explain_qwds = ["What do we need to ","How to ","what is the requirement to ","which method can we used to "]
+    method_qwds = ["chieve the ", "use the ","realize the ","accomplish the ","implement","carry out",]
+
+    # reason
+    reason_explain_qwds = ["what is ", ]
+    reason_qwds = ["the reason ", "use the ", "realize the ", "accomplish the ", "implement", "carry out", ]
+    reason_explain_qwds =["what is the reason of ","Can you explain the reason of","Could you tell me the reason of ","Can you give me the reason about "]
+
+
+    greet_qwds = ['hello !','excuse me !','Hi !','How are you ?','How do you do ?']
+
+
+
 
     label_list = [line.strip() for line in open('label','r',encoding='utf8')]
     label2id = {label:idx for idx,label in enumerate(label_list)}
 
-    disease_list = json.load(open('../../knowledge_extraction/bilstm_crf/checkpoint/diseases.json','r',encoding='utf8'))
-    n = len(disease_list)-1
+    eneity_list = ["AI","Data minning","NLP"]
+    n = len(eneity_list)
 
     data = []
 
     #问定义
-    template = "{greet}{explain}{disease}{define}"
-    for i in range(60):
-        greet = greet_qwds[random.randint(0,len(greet_qwds)-1)]
-        explain = explain_qwds[random.randint(0,len(explain_qwds)-1)]
-        disease = disease_list[random.randint(0,n)]
-        if i % 15 == 0:
-            disease == ""
-        define = define_qwds[random.randint(0,len(define_qwds)-1)]
-        text = template.format(greet=greet,explain=explain,disease=disease,define=define)
-        data.append([text,'定义',label2id['定义']])
-
-    #问临床表现(病症表现)
-    template = "{greet}{disease}{symptom}"
-    for i in range(60):
-        greet = greet_qwds[random.randint(0,len(greet_qwds)-1)]
-        explain = explain_qwds[random.randint(0,len(explain_qwds)-1)]
-        disease = disease_list[random.randint(0,n)]
-        if i % 15 == 0:
-            disease == ""
-        symptom = symptom_qwds[random.randint(0,len(symptom_qwds)-1)]
-        text = template.format(greet=greet,disease=disease,symptom=symptom)
-        data.append([text,'临床表现(病症表现)',label2id['临床表现(病症表现)']])
-
-    #问预防措施
-    template = "{howtodo}{prevent}{disease}"
-    for i in range(100):
-        howtodo = howtodo_qwds[random.randint(0,len(howtodo_qwds)-1)]
-        disease = disease_list[random.randint(0,n)]
-        if i % 15 == 0:
-            disease == ""
-        prevent = prevent_qwds[random.randint(0,len(prevent_qwds)-1)]
-        text = template.format(howtodo=howtodo,disease=disease,prevent=prevent)
-        data.append([text,'预防',label2id['预防']])
-
-    #问相关病症
-    #请问XX疾病有什么相关病吗
-    template = "{greet}{disease}有什么{relevance}"
-    for i in range(80):
-        greet = greet_qwds[random.randint(0,len(greet_qwds)-1)]
-        disease = disease_list[random.randint(0,n)]
-        if i % 15 == 0:
-            disease == ""
-        relevance = relevance_qwds[random.randint(0,len(relevance_qwds)-1)]
-        text = template.format(greet=greet,disease=disease,relevance=relevance)
-        data.append([text,'相关病症',label2id['相关病症']])
-
-    #问所属科室
-    #请问XX疾病应该看什么科
-    template = "{greet}{disease}{department}"
-    for i in range(100):
-        greet = greet_qwds[random.randint(0,len(greet_qwds)-1)]
-        disease = disease_list[random.randint(0,n)]
-        if i % 15 == 0:
-            disease == ""
-        department = department_qwds[random.randint(0,len(department_qwds)-1)]
-        text = template.format(greet=greet,disease=disease,department=department)
-        data.append([text,'所属科室',label2id['所属科室']])
-
-    #问传染性
-    #请问XX疾病会传染哪些人群？
-    template = "{greet}{disease}{infect}"
-    for i in range(120):
-        greet = greet_qwds[random.randint(0,len(greet_qwds)-1)]
-        disease = disease_list[random.randint(0,n)]
-        if i % 15 == 0:
-            disease == ""
-        infect = infect_qwds[random.randint(0,len(infect_qwds)-1)]
-        text = template.format(greet=greet,disease=disease,infect=infect)
-        data.append([text,'传染性',label2id['传染性']])
-
-    #问治愈率
-    #请问得了XX疾病的治愈率多高？
-    template = "{greet}{disease}{cureprob}"
-    for i in range(120):
-        greet = greet_qwds[random.randint(0,len(greet_qwds)-1)]
-        disease = disease_list[random.randint(0,n)]
-        if i % 15 == 0:
-            disease == ""
-        cureprob = cureprob_qwds[random.randint(0,len(cureprob_qwds)-1)]
-        text = template.format(greet=greet,disease=disease,cureprob=cureprob)
-        data.append([text,'治愈率',label2id['治愈率']])
-
-    #问化验/体检方案
-    #请问得了XX疾病要做什么检查？
-    template = "{greet}{disease}{check}"
+    template = "{greet}{explain}{definition}{eneity}"
     for i in range(150):
         greet = greet_qwds[random.randint(0,len(greet_qwds)-1)]
-        disease = disease_list[random.randint(0,n)]
-        if i % 15 == 0:
-            disease == ""
-        check = check_qwds[random.randint(0,len(check_qwds)-1)]
-        text = template.format(greet=greet,disease=disease,check=check)
-        data.append([text,'化验/体检方案',label2id['化验/体检方案']])
+        explain = definition_explain_qwds[random.randint(0,len(definition_explain_qwds)-1)]
+        definition = definition_qwds[random.randint(0, len(define_qwds) - 1)]
+        eneity = eneity_list[random.randint(0,n)]
+        text = template.format(greet=greet,explain=explain,eneity=eneity,difinition=definition)
+        data.append([text,'definition',label2id['definition']])
 
-    #问治疗时间
-    #请问得了XX疾病要治疗多久？
-    template = "{greet}{disease}{lasttime}"
-    for i in range(150):
+    #developer
+    template = "{greet}{explain}{developer}{eneity}"
+    for i in range(300):
         greet = greet_qwds[random.randint(0,len(greet_qwds)-1)]
-        disease = disease_list[random.randint(0,n)]
-        if i % 15 == 0:
-            disease == ""
-        lasttime = lasttime_qwds[random.randint(0,len(lasttime_qwds)-1)]
-        text = template.format(greet=greet,disease=disease,lasttime=lasttime)
-        data.append([text,'治疗时间',label2id['治疗时间']])
+        explain = developer_explain_qwds[random.randint(0,len(developer_explain_qwds)-1)]
+        eneity = eneity_list[random.randint(0, n)]
+        developer = developer_qwds[random.randint(0,len(developer_qwds)-1)]
+        text = template.format(greet=greet,explain=explain,developer=developer,eneity=eneity)
+        data.append([text,'developer',label2id['developer']])
+
+    #difference
+    template = "{greet}{explain}{difference}{Connectives}{eneity1}and{eneity2}"
+    for i in range(300):
+        greet = greet_qwds[random.randint(0, len(greet_qwds) - 1)]
+        eneity1 = eneity_list[random.randint(0, n)]
+        eneity2 = eneity_list[random.randint(0, n)]
+        explain = different_explain_qwds[random.randint(0,len(different_explain_qwds)-1)]
+        difference = different_qwds[random.randint(0,len(different_qwds)-1)]
+        Connectives = different_connectives_qwds[random.randint(0,len(different_connectives_qwds)-1)]
+        text = template.format(greet=greet,explain=explain,difference=difference,Connectives=Connectives,eneity1=eneity1,eneity2=eneity2)
+        data.append([text,'difference',label2id['difference']])
+
+    #drawback
+    template = "{greet}{explain}{drawback}{eneity}"
+    for i in range(300):
+        greet = greet_qwds[random.randint(0,len(greet_qwds)-1)]
+        explain = drawback_explain_qwds[random.randint(0,len(drawback_explain_qwds)-1)]
+        eneity = eneity_list[random.randint(0, n)]
+        drawback = drawback_qwds[random.randint(0,len(drawback_qwds)-1)]
+        text = template.format(greet=greet,explain=explain,drawback=drawback,eneity=eneity)
+        data.append([text,'drawback',label2id['drawback']])
+
+    #example
+    template = "{greet}{explain}{example}{eneity}"
+    for i in range(300):
+        greet = greet_qwds[random.randint(0,len(greet_qwds)-1)]
+        explain = example_explain_qwds[random.randint(0,len(example_explain_qwds)-1)]
+        eneity = eneity_list[random.randint(0, n)]
+        example = example_qwds[random.randint(0,len(example_qwds)-1)]
+        text = template.format(greet=greet,explain=explain,example=example,eneity=eneity)
+        data.append([text,'example',label2id['example']])
+
+    #has_part
+
+    #method
+    template = "{greet}{explain}{method}{eneity}"
+    for i in range(300):
+        greet = greet_qwds[random.randint(0,len(greet_qwds)-1)]
+        explain = method_explain_qwds[random.randint(0,len(method_explain_qwds)-1)]
+        eneity = eneity_list[random.randint(0, n)]
+        method = method_qwds[random.randint(0,len(method_qwds)-1)]
+        text = template.format(greet=greet,explain=explain,method=method,eneity=eneity)
+        data.append([text,'method',label2id['method']])
+
+    # reason
+    template = "{greet}{explain}{method}{eneity}"
+    for i in range(300):
+        greet = greet_qwds[random.randint(0, len(greet_qwds) - 1)]
+        explain = method_explain_qwds[random.randint(0, len(method_explain_qwds) - 1)]
+        eneity = eneity_list[random.randint(0, n)]
+        reason = method_qwds[random.randint(0, len(method_qwds) - 1)]
+        text = template.format(greet=greet, explain=explain, reason=reason, eneity=eneity)
+        data.append([text, 'reason', label2id['reason']])
 
     return data
     
