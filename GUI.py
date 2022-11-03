@@ -1,10 +1,10 @@
 from tkinter import *
 from PIL import Image, ImageTk
-#from bert_intend_recognition import app
-#from bilstm_crf import app
-# GUI
-# BIM = BertIntentModel()  实例化BertIntentModel
-# MNM = MedicalNerModel() 实例化MedicalNerModel
+# from bert_intent_recognition.app import BertIntentModel
+from bilstm_crf.app import MedicalNerModel
+
+# BIM = BertIntentModel()  #实例化BertIntentModel
+MNM = MedicalNerModel() #实例化MedicalNerModel
 root = Tk()
 root.title("AI Tutor")
 root.geometry("1000x600")
@@ -24,7 +24,8 @@ def send():
 
     input = e.get().lower()
     # intent_output = BIM.predict(input)
-    # entity_output = MNM.predict(input)
+    entity_output = MNM.predict(input)
+    print(entity_output)
     # if(intent_output == ""):
 
     # txt.insert(END, "\n" + "Bot -> Sorry! I didn't understand that")
