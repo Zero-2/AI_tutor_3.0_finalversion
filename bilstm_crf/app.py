@@ -10,8 +10,21 @@ import keras
 from keras.backend.tensorflow_backend import set_session
 from keras.preprocessing.sequence import pad_sequences
 
-from crf_layer import CRF
-from bilstm_crf_model import BiLstmCrfModel
+import sys
+sys.path.append("..")
+import bilstm_crf.crf_layer as crf_layer
+# from crf_layer import CRF
+sys.path.append("..")
+import bilstm_crf.bilstm_crf_model
+# from bilstm_crf import bilstm_crf_model as BiLstmCrfModel
+
+# 修改：8099 -》15
+max_len = 15
+# 修改2410 -> 500 ->300
+vocab_size = 500
+embedding_dim = 200
+lstm_units = 128
+tag_type = 4
 
 class NerBaseDict(object):
     def __init__(self, dict_path):
@@ -25,9 +38,12 @@ class NerBaseDict(object):
             return json.load(f)
 
     def build_actree(self, wordlist):
+
         actree = ahocorasick.Automaton()
         for index, word in enumerate(wordlist):
+            # print(word)
             actree.add_word(word, (index, word))
+            print(actree)
         actree.make_automaton()
         return actree
 
@@ -35,6 +51,7 @@ class NerBaseDict(object):
         item = {"string": text, "entities": []}
 
         region_wds = []
+
         for i in self.region_tree.iter(text):
             wd = i[1][1]
             region_wds.append(wd)
@@ -44,7 +61,7 @@ class NerBaseDict(object):
                 if wd1 in wd2 and wd1 != wd2:
                     stop_wds.append(wd1)
         final_wds = [i for i in region_wds if i not in stop_wds]
-        item["entities"] = [{"word":i,"type":"disease","recog_label":"dict"} for i in final_wds]
+        item["entities"] = [{"word":i,"type":"eneity","recog_label":"dict"} for i in final_wds]
         return item
 
 
@@ -53,15 +70,17 @@ class MedicalNerModel(object):
     def __init__(self):
         super(MedicalNerModel, self).__init__()
         self.word2id,_,self.id2tag = pickle.load(
-                open("./checkpoint/word_tag_id.pkl","rb")
+                open("F:/AI_tutor/bilstm_crf/checkpoint/word_tag_id.pkl","rb")
             )
-        self.model = BiLstmCrfModel(80,2410,200,128,24).build()
-        self.model.load_weights('./checkpoint/best_bilstm_crf_model.h5')
+        self.model = bilstm_crf.bilstm_crf_model.BiLstmCrfModel(max_len,vocab_size,embedding_dim,lstm_units,tag_type).build()
+        self.model.load_weights('F:/AI_tutor/bilstm_crf/checkpoint/best_bilstm_crf_model.h5')
 
-        self.nbd = NerBaseDict('./checkpoint/diseases.json')
+        self.nbd = NerBaseDict('F:/AI_tutor/bert_intent_recognition/data/eneities.json')
 
     def tag_parser(self,string,tags):
         item = {"string": string, "entities": [],"recog_label":"model"}
+
+        string = string.split()
         entity_name = ""
         flag=[]
         visit=False
@@ -73,10 +92,10 @@ class MedicalNerModel(object):
                     item["entities"].append({"word": entity_name,"type": y[0]})
                     flag.clear()
                     entity_name=""
-                entity_name += char
+                entity_name += char + " "
                 flag.append(tag[2:])
             elif tag[0]=="I":
-                entity_name += char
+                entity_name += char + " "
                 flag.append(tag[2:])
             else:
                 if entity_name!="":
@@ -99,13 +118,27 @@ class MedicalNerModel(object):
         texts 为一维列表，元素为字符串
         texts = ["淋球菌性尿道炎的症状","上消化道出血的常见病与鉴别"]
         """
-        X = [[self.word2id.get(word,1) for word in list(x)] for x in texts ]
-        X = pad_sequences(X,maxlen=80,value=0)
+        texts = texts[0].split()
+        # for x in texts:
+        #     print("x: ")
+        #     print(type(x))
+        #     print(list(x))
+        #     for word in list(x):
+        #         print(word)
+
+        # X = [[self.word2id.get(word, 1) for word in x] for x in X]
+        X = [[self.word2id.get(word, 1) for word in texts]]
+        # X = [[self.word2id.get(word, 1) for word in texts]]
+        X = pad_sequences(X,maxlen=15,value=0)
         pred_id = self.model.predict(X)
         res = []
+        texts = " ".join(texts)
+        texts = [texts]
         for text,pred in zip(texts,pred_id):
             tags = np.argmax(pred,axis=1)
+            print(tags)
             tags = [self.id2tag[i] for i in tags if i!=0]
+            print(tags)
             ents = self.tag_parser(text,tags)
             if ents["entities"]:
                 res.append(ents)
@@ -146,10 +179,9 @@ if __name__ == '__main__':
     #
     #     return flask.jsonify(data)
 
-    server = pywsgi.WSGIServer(("0.0.0.0",60061), app)
-    server.serve_forever()
 
 
-    # r = model.predict(["淋球菌性尿道炎的症状","上消化道出血的常见病与鉴别"])
-    # print(r)
+    # r = model.predict(["淋球菌性尿道炎的症状"])
+    r = model.predict(["can you give me a example of water fountain"])
+    print(r)
 

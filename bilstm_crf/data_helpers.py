@@ -39,6 +39,7 @@ class NerDataProcessor(object):
             for line in f.readlines():
                 #每行为一个字符和其tag，中间用tab或者空格隔开
                 line = line.strip().split()
+
                 if(not line or len(line) < 2): 
                     X.append(sentence.copy())
                     y.append(labels.copy())
@@ -66,6 +67,7 @@ class NerDataProcessor(object):
 
         if is_training_data:
             self.tags = sorted(list(set(chain(*y))))
+
             self.tag2id = {tag : idx + 1 for idx,tag in enumerate(self.tags)}
             self.id2tag = {idx + 1 : tag for idx,tag in enumerate(self.tags)}
             #将 x 进行padding的同时也需要对标签进行相应的padding
@@ -75,26 +77,36 @@ class NerDataProcessor(object):
             self.sample_nums = len(X)
 
             vocab = list(chain(*X))
-            print("vocab lenth",len(set(vocab)))
-            print(self.id2tag)
+
             vocab = Counter(vocab).most_common(self.vocab_size-2)
+
             vocab = [v[0] for v in vocab]
             for index,word in enumerate(vocab):
                 self.word2id[word] = index + 2
 
+
             # OOV 为1，padding为0
             self.word2id['padding'] = 0
             self.word2id['OOV'] = 1
-
         return X,y
 
     def encode(self,X,y):
         """将训练样本映射成数字，以及进行padding
         将标签进行 one-hot"""
+
+
         X = [[self.word2id.get(word,1) for word in x] for x in X ]
+        y = [[self.tag2id.get(tag, 0) for tag in t] for t in y]
+        print(self.tag2id)
+        print("encode: ")
+        print(X)
+        print(y)
+
         X = pad_sequences(X,maxlen=self.max_len,value=0)
-        y = [[self.tag2id.get(tag,0) for tag in t] for t in y ]
         y = pad_sequences(y,maxlen=self.max_len,value=0)
+        print("padding: ")
+        print(X)
+        print(y)
 
         def label_to_one_hot(index: []):
             data = []

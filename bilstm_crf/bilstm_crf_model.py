@@ -1,6 +1,9 @@
 # coding=utf-8
 import keras
-from crf_layer import CRF
+import sys
+sys.path.append("..")
+import bilstm_crf.crf_layer
+# from crf_layer import CRF
 
 class BiLstmCrfModel(object):
     def __init__(
@@ -61,7 +64,7 @@ class BiLstmCrfModel(object):
                     0.2
                 )
             )(x)
-        crf = CRF(self.class_nums)
+        crf = bilstm_crf.crf_layer.CRF(self.class_nums)
         outputs = crf(x)
         model = keras.Model(inputs=inputs, outputs=outputs)
         model.compile(

@@ -2,6 +2,7 @@ import csv
 import openpyxl
 import random
 import pandas as pd
+import json
 
 def gen_sample_base_template(eneity):
     # definition
@@ -135,7 +136,8 @@ def deal_data(path, sheet_name):
     id_label = {label: index for index, label in enumerate(label_list)}
 
     data = []
-    Total_eneity = []
+    Total_eneity_csv = []
+    Total_eneity_json = []
     chapters = [1,2,3,4,5,8,9,10,11,12,13,14,15]
 
     for i in chapters:
@@ -148,20 +150,24 @@ def deal_data(path, sheet_name):
             text = workbook_sheet.cell(row, 5).value
             label_class = workbook_sheet.cell(row, 7).value
             label = id_label.get(label_class)
-            eneity = [workbook_sheet.cell(row, 6).value]
+            eneity_csv = [workbook_sheet.cell(row, 6).value]
+            eneity_json = workbook_sheet.cell(row, 6).value
+
 
             if text == None or label_class == None:
                 continue
 
-            if eneity != None or eneity not in Total_eneity:
-                Total_eneity.append(eneity)
+            if eneity_csv != None and eneity_csv not in Total_eneity_csv:
+                Total_eneity_csv.append(eneity_csv)
+                Total_eneity_json.append(eneity_json)
+
 
             row_stack.append(text)
             row_stack.append(label_class)
             row_stack.append(label)
             data.append(row_stack)
 
-    return data, Total_eneity
+    return data, Total_eneity_csv,Total_eneity_json
 
 def creat_dataset(data):
 
@@ -177,11 +183,15 @@ def creat_dataset(data):
         for item in range(int(len(data)*0.7)+1,len(data)-1):
             write.writerow(data[item])
 
-def creat_eneityset(eneities):
+def creat_eneityset(eneities_csv, eneities_json):
 
     with open("data/eneities.csv", "w+", encoding="utf-8-sig", newline='') as f:
         write = csv.writer(f)
-        write.writerows(eneities)
+        write.writerows(eneities_csv)
+
+    with open("data/eneities.json", "w+") as f:
+        json.dump(eneities_json, f)
+
 
 
 
@@ -189,9 +199,9 @@ if __name__ == '__main__':
     path = "../Concepts/"
     sheet_name = "Q&A"
 
-    data1, eneity = deal_data(path, sheet_name)
-    creat_eneityset(eneity)
+    data1, eneity_csv, eneity_json = deal_data(path, sheet_name)
+    creat_eneityset(eneity_csv,eneity_json)
 
-    data2 = gen_sample_base_template(eneity)
+    data2 = gen_sample_base_template(eneity_csv)
     data = data1 + data2
     creat_dataset(data)

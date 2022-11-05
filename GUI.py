@@ -5,6 +5,7 @@ from bilstm_crf.app import MedicalNerModel
 
 # BIM = BertIntentModel()  #实例化BertIntentModel
 MNM = MedicalNerModel() #实例化MedicalNerModel
+
 root = Tk()
 root.title("AI Tutor")
 root.geometry("1000x600")
@@ -24,7 +25,8 @@ def send():
 
     input = e.get().lower()
     # intent_output = BIM.predict(input)
-    entity_output = MNM.predict(input)
+    print(input)
+    entity_output = MNM.predict([input])
     print(entity_output)
     # if(intent_output == ""):
 

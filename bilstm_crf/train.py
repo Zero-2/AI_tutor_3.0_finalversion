@@ -4,10 +4,11 @@ import numpy as np
 from bilstm_crf_model import BiLstmCrfModel
 from crf_layer import CRF
 from data_helpers import NerDataProcessor
+import pickle
 
-# 修改：8099 -》800
-max_len = 100
-# 修改2410 -> 1205
+# 修改：8099 -》15
+max_len = 15
+# 修改2410 -> 500 ->300
 vocab_size = 500
 embedding_dim = 200
 lstm_units = 128
@@ -18,12 +19,15 @@ if __name__ == '__main__':
             "./data1/training_data.txt",
             is_training_data=True
         )
+
     train_X,train_y = ndp.encode(train_X,train_y)
+
     dev_X,dev_y = ndp.read_data(
             "./data1/dev_data.txt",
             is_training_data=False
         )
     dev_X,dev_y = ndp.encode(dev_X,dev_y)
+
     test_X,test_y = ndp.read_data(
             "./data1/testing_data.txt",
             is_training_data=False
@@ -34,7 +38,7 @@ if __name__ == '__main__':
     word2id = ndp.word2id
     tag2id = ndp.tag2id
     id2tag = ndp.id2tag
-    import pickle
+
     pickle.dump(
             (word2id,tag2id,id2tag),
             open("./checkpoint/word_tag_id.pkl","wb")
@@ -50,34 +54,35 @@ if __name__ == '__main__':
     model = bilstm_crf.build()
 
     reduce_lr = keras.callbacks.ReduceLROnPlateau(
-        monitor='val_loss', 
-        factor=0.5, 
-        patience=4,
+        monitor='val_loss',
+        factor=0.3,
+        patience=3,
         # 修改 1-》2
-        verbose=2)
+        verbose=1
+    )
 
     earlystop = keras.callbacks.EarlyStopping(
-        monitor='val_loss', 
-        patience=10, 
-        verbose=2, 
+        monitor='val_loss',
+        patience=2,
+        verbose=2,
         mode='min'
         )
     bast_model_filepath = './checkpoint/best_bilstm_crf_model.h5'
     checkpoint = keras.callbacks.ModelCheckpoint(
-        bast_model_filepath, 
+        bast_model_filepath,
         monitor='val_loss',
         #  修改 1 -》 2
-        verbose=2,
+        verbose=1,
         save_best_only=True,
         mode='min'
         )
     model.fit(
-        x=train_X, 
-        y=train_y, 
-        batch_size=32, 
-        epochs=80, 
-        validation_data=(dev_X, dev_y), 
-        shuffle=True, 
+        x=train_X,
+        y=train_y,
+        batch_size=32,
+        epochs=80,
+        validation_data=(dev_X, dev_y),
+        shuffle=True,
         callbacks=[reduce_lr,earlystop,checkpoint]
         )
     model.load_weights(bast_model_filepath)
