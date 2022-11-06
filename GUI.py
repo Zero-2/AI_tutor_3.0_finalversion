@@ -1,9 +1,13 @@
 from tkinter import *
 from PIL import Image, ImageTk
-# from bert_intent_recognition.app import BertIntentModel
+from py2neo import Graph, Node, Relationship, NodeMatcher
+from bert_intent_recognition.app import BertIntentModel
 from bilstm_crf.app import MedicalNerModel
 
-# BIM = BertIntentModel()  #实例化BertIntentModel
+graph = Graph("http://localhost:7474", auth=("neo4j", "neo4j"))
+node_matcher = NodeMatcher(graph)
+
+BIM = BertIntentModel()  #实例化BertIntentModel
 MNM = MedicalNerModel() #实例化MedicalNerModel
 
 root = Tk()
@@ -20,18 +24,37 @@ FONT_BOLD = "TimesNewRoman 13 bold"
 
 # Send function
 def send():
+
     send = "You -> " + e.get()
     txt.insert(END, "\n" + send)
-
-    input = e.get().lower()
-    # intent_output = BIM.predict(input)
-    print(input)
+    input = e.get()
+    intent_output = BIM.predict(input)
     entity_output = MNM.predict([input])
-    print(entity_output)
-    # if(intent_output == ""):
-
-    # txt.insert(END, "\n" + "Bot -> Sorry! I didn't understand that")
-
+    intent_output = intent_output.get("name")
+    entity_output = entity_output[0].get("entities")[0].get("word")
+    entity_output = entity_output.strip()
+    # print(intent_output)
+    # print(entity_output)
+    # print(entity_output.split('\n'))
+    node1 = node_matcher.match("Nodes").where(name = entity_output.lower()).first()
+    print(node1)
+    if(node1 == None):
+        answer = "sorry I haven't learn that concept, please try some others."
+        txt.insert(END, "\n\n" + "AI Tutor ->" + answer)
+        return
+    # print(node1)
+    relationship = list(graph.match([node1], r_type = intent_output))
+    print(relationship)
+    if (len(relationship) == 0):
+        answer = "sorry I haven't learn that relationship, please try some others."
+        txt.insert(END, "\n\n" + "AI Tutor ->" + answer)
+        return
+    # print(relationship)
+    answer = ''
+    for i in range(len(relationship)):
+        print(relationship[i].end_node['name'])
+        answer += relationship[i].end_node['name']
+    txt.insert(END, "\n\n" + "AI Tutor ->"+ answer)
     e.delete(0, END)
 
 
@@ -45,7 +68,7 @@ e.grid(row=2, column=0)
 send = Button(root, text="Send", font=FONT_BOLD, bg=BG_GRAY,command=send).grid(row=2, column=1)
 
 photo = Image.open(r'C:\Users\86137\Desktop\R.jpg')
-photo = photo.resize((400,400))
+photo = photo.resize((400,500))
 photo = ImageTk.PhotoImage(photo)
 label = Label(image=photo)
 label.image = photo

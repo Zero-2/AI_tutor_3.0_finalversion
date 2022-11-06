@@ -9,7 +9,7 @@ import pickle
 # 修改：8099 -》15
 max_len = 15
 # 修改2410 -> 500 ->300
-vocab_size = 500
+vocab_size = 400
 embedding_dim = 200
 lstm_units = 128
 

@@ -21,7 +21,7 @@ import bilstm_crf.bilstm_crf_model
 # 修改：8099 -》15
 max_len = 15
 # 修改2410 -> 500 ->300
-vocab_size = 500
+vocab_size = 400
 embedding_dim = 200
 lstm_units = 128
 tag_type = 4
@@ -43,7 +43,6 @@ class NerBaseDict(object):
         for index, word in enumerate(wordlist):
             # print(word)
             actree.add_word(word, (index, word))
-            print(actree)
         actree.make_automaton()
         return actree
 
@@ -127,6 +126,7 @@ class MedicalNerModel(object):
         #         print(word)
 
         # X = [[self.word2id.get(word, 1) for word in x] for x in X]
+        print(texts)
         X = [[self.word2id.get(word, 1) for word in texts]]
         # X = [[self.word2id.get(word, 1) for word in texts]]
         X = pad_sequences(X,maxlen=15,value=0)
@@ -182,6 +182,7 @@ if __name__ == '__main__':
 
 
     # r = model.predict(["淋球菌性尿道炎的症状"])
-    r = model.predict(["can you give me a example of water fountain"])
+    r = model.predict(["can you tell me what is cognitive science"])
+    print(type(r))
     print(r)
 

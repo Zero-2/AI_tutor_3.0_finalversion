@@ -1,28 +1,31 @@
 #! -*- coding: utf-8 -*-
-import json
-import pandas as pd 
-import numpy as np 
-
+import random
+import numpy as np
+import os
 from bert4keras.backend import keras
 from bert4keras.tokenizers import Tokenizer
 from bert4keras.snippets import sequence_padding, DataGenerator
 from sklearn.metrics import classification_report
 from bert4keras.optimizers import Adam
+import tensorflow as tf
 
 from bert_model import build_bert_model
 from data_helper import load_data
 
+seed = 233
+tf.set_random_seed(seed)
+np.random.seed(seed)
+random.seed(seed)
+os.environ['PYTHONHASHSEED'] = str(seed)
+
 #定义超参数和配置文件
 class_nums = 11
-maxlen = 60
+maxlen = 120
 batch_size = 16
 
-# config_path='E:/bert_weight_files/roberta/bert_config_rbt3.json'
-config_path='../wwm_uncased_L-24_H-1024_A-16/bert_config.json'
-checkpoint_path ='../wwm_uncased_L-24_H-1024_A-16/bert_model.ckpt'
-dict_path ='../wwm_uncased_L-24_H-1024_A-16/vocab.txt'
-# checkpoint_path='E:/bert_weight_files/roberta/bert_model.ckpt'
-# dict_path = 'E:/bert_weight_files/roberta/vocab.txt'
+config_path='../Bert_model/wwm_uncased_L-24_H-1024_A-16/bert_config.json'
+checkpoint_path ='../Bert_model/wwm_uncased_L-24_H-1024_A-16/bert_model.ckpt'
+dict_path ='../Bert_model/wwm_uncased_L-24_H-1024_A-16/vocab.txt'
 
 tokenizer = Tokenizer(dict_path)
 class data_generator(DataGenerator):
@@ -66,10 +69,11 @@ if __name__ == '__main__':
 
     earlystop = keras.callbacks.EarlyStopping(
         monitor='val_loss',
-        patience=3,
+        patience=4,
         verbose=2,
         mode='min'
         )
+
     bast_model_filepath = './checkpoint/best_model.weights'
     '''
         保存训练后的模型
@@ -93,7 +97,7 @@ if __name__ == '__main__':
     model.fit_generator(
         train_generator.forfit(),
         steps_per_epoch=len(train_generator),
-        epochs=10,
+        epochs=80,
         validation_data=test_generator.forfit(),
         validation_steps=len(test_generator),
         shuffle=True,
