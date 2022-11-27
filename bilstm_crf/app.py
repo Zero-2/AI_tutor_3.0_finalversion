@@ -69,10 +69,10 @@ class MedicalNerModel(object):
     def __init__(self):
         super(MedicalNerModel, self).__init__()
         self.word2id,_,self.id2tag = pickle.load(
-                open("F:/AI_tutor/bilstm_crf/checkpoint/word_tag_id.pkl","rb")
+                open("F:/AI_tutor/bilstm_crf/checkpoint1/word_tag_id.pkl", "rb")
             )
         self.model = bilstm_crf.bilstm_crf_model.BiLstmCrfModel(max_len,vocab_size,embedding_dim,lstm_units,tag_type).build()
-        self.model.load_weights('F:/AI_tutor/bilstm_crf/checkpoint/best_bilstm_crf_model.h5')
+        self.model.load_weights('F:/AI_tutor/bilstm_crf/checkpoint1/best_bilstm_crf_model.h5')
 
         self.nbd = NerBaseDict('F:/AI_tutor/bert_intent_recognition/data/eneities.json')
 

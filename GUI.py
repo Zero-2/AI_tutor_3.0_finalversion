@@ -29,6 +29,7 @@ def send():
     txt.insert(END, "\n" + send)
     input = e.get()
     intent_output = BIM.predict(input)
+    print(intent_output)
     entity_output = MNM.predict([input])
     intent_output = intent_output.get("name")
     entity_output = entity_output[0].get("entities")[0].get("word")
@@ -53,17 +54,15 @@ def send():
     answer = ''
     for i in range(len(relationship)):
         print(relationship[i].end_node['name'])
-        answer += relationship[i].end_node['name']
+        answer += str(i+1)+"." + relationship[i].end_node['name'] + "\n\n"
     txt.insert(END, "\n\n" + "AI Tutor ->"+ answer)
     e.delete(0, END)
 
 
 lable1 = Label(root, bg=BG_COLOR, fg=TEXT_COLOR, text="Welcome", font=FONT_BOLD, pady=10, width=20, height=1).grid(row=0)
-txt = Text(root, bg=BG_COLOR, fg=TEXT_COLOR, font=FONT, width=60)
+txt = Text(root, bg=BG_COLOR, fg=TEXT_COLOR, font=FONT, width=70)
 txt.grid(row=1, column=0, columnspan=2)
-scrollbar = Scrollbar(txt)
-scrollbar.place(relheight=1, relx=0.974)
-e = Entry(root, bg="#2C3E50", fg=TEXT_COLOR, font=FONT, width=55)
+e = Entry(root, bg="#2C3E50", fg=TEXT_COLOR, font=FONT, width=65)
 e.grid(row=2, column=0)
 send = Button(root, text="Send", font=FONT_BOLD, bg=BG_GRAY,command=send).grid(row=2, column=1)
 

@@ -281,8 +281,8 @@ def creat_training_data(data):
 
 if __name__ == '__main__':
 
-    if not os.path.exists("./checkpoint"):
-        os.mkdir('./checkpoint')
+    if not os.path.exists("checkpoint1"):
+        os.mkdir('checkpoint1')
 
     path = "../Concepts/"
     sheet_name = "Q&A"

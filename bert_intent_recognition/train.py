@@ -74,7 +74,7 @@ if __name__ == '__main__':
         mode='min'
         )
 
-    bast_model_filepath = './checkpoint/best_model.weights'
+    bast_model_filepath = 'checkpoint1/best_model.weights'
     '''
         保存训练后的模型
         bast_model_filepath: 保存模型的路径

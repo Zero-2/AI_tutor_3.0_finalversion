@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
     pickle.dump(
             (word2id,tag2id,id2tag),
-            open("./checkpoint/word_tag_id.pkl","wb")
+            open("checkpoint1/word_tag_id.pkl", "wb")
         )
 
     bilstm_crf = BiLstmCrfModel(
@@ -67,7 +67,7 @@ if __name__ == '__main__':
         verbose=2,
         mode='min'
         )
-    bast_model_filepath = './checkpoint/best_bilstm_crf_model.h5'
+    bast_model_filepath = 'checkpoint1/best_bilstm_crf_model.h5'
     checkpoint = keras.callbacks.ModelCheckpoint(
         bast_model_filepath,
         monitor='val_loss',
@@ -86,7 +86,7 @@ if __name__ == '__main__':
         callbacks=[reduce_lr,earlystop,checkpoint]
         )
     model.load_weights(bast_model_filepath)
-    model.save('./checkpoint/bilstm_crf_model.h5')
+    model.save('./checkpoint1/bilstm_crf_model.h5')
 
     pred = model.predict(test_X)
 

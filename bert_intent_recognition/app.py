@@ -36,7 +36,7 @@ class BertIntentModel(object):
 
         self.tokenizer = Tokenizer(self.dict_path)
         self.model = bert_intent_recognition.bert_model.build_bert_model(self.config_path,self.checkpoint_path,11)
-        self.model.load_weights('F:/AI_tutor/bert_intent_recognition/checkpoint/best_model.weights')
+        self.model.load_weights('F:/AI_tutor/bert_intent_recognition/checkpoint1/best_model.weights')
 
     def predict(self,text):
         # tokenizer.encode 相当于把embedding
