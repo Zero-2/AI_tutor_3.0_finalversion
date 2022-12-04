@@ -2,6 +2,7 @@
 import random
 import numpy as np
 import os
+import pandas as pd
 from bert4keras.backend import keras
 from bert4keras.tokenizers import Tokenizer
 from bert4keras.snippets import sequence_padding, DataGenerator
@@ -10,7 +11,7 @@ from bert4keras.optimizers import Adam
 import tensorflow as tf
 
 from bert_model import build_bert_model
-from data_helper import load_data
+
 
 seed = 233
 tf.set_random_seed(seed)
@@ -28,6 +29,16 @@ checkpoint_path ='../Bert_model/wwm_uncased_L-24_H-1024_A-16/bert_model.ckpt'
 dict_path ='../Bert_model/wwm_uncased_L-24_H-1024_A-16/vocab.txt'
 
 tokenizer = Tokenizer(dict_path)
+
+
+def load_data(filename):
+    """加载数据
+    单条格式：(文本, 标签id)
+    """
+    df = pd.read_csv(filename,header=0)
+    return df[['text','label']].values
+
+
 class data_generator(DataGenerator):
     """
     数据生成器

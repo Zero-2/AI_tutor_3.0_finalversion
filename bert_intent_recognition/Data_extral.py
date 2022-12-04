@@ -276,7 +276,7 @@ def creat_training_data(data):
         for j in range(0, 6):
             sheet.write(i + 1, j, data_row[j])
 
-    savepath = './data/Bilstm_crf_data.xls'
+    savepath = './Data/0.xls'
     book.save(savepath)
 
 if __name__ == '__main__':
