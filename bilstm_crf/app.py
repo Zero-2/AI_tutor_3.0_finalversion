@@ -182,7 +182,7 @@ if __name__ == '__main__':
 
 
     # r = model.predict(["淋球菌性尿道炎的症状"])
-    r = model.predict(["can you tell me what is cognitive science"])
+    r = model.predict(["can you tell me the difference from human visual system ?"])
     print(type(r))
     print(r)
 

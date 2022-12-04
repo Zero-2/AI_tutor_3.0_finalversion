@@ -24,13 +24,19 @@ FONT_BOLD = "TimesNewRoman 13 bold"
 
 # Send function
 def send():
-
     send = "You -> " + e.get()
     txt.insert(END, "\n" + send)
     input = e.get()
     intent_output = BIM.predict(input)
+    print("intent_output:")
     print(intent_output)
     entity_output = MNM.predict([input])
+    print("entity_output:")
+    print(entity_output)
+    if(len(entity_output) == 0):
+        answer = "sorry I haven't learn that concept, please try some others.\n\n"
+        txt.insert(END, "\n\n" + "AI Tutor ->" + answer)
+        return
     intent_output = intent_output.get("name")
     entity_output = entity_output[0].get("entities")[0].get("word")
     entity_output = entity_output.strip()
@@ -40,14 +46,14 @@ def send():
     node1 = node_matcher.match("Nodes").where(name = entity_output.lower()).first()
     print(node1)
     if(node1 == None):
-        answer = "sorry I haven't learn that concept, please try some others."
+        answer = "sorry I haven't learn that concept, please try some others.\n\n"
         txt.insert(END, "\n\n" + "AI Tutor ->" + answer)
         return
     # print(node1)
     relationship = list(graph.match([node1], r_type = intent_output))
     print(relationship)
     if (len(relationship) == 0):
-        answer = "sorry I haven't learn that relationship, please try some others."
+        answer = "sorry I haven't learn that relationship, please try some others.\n\n"
         txt.insert(END, "\n\n" + "AI Tutor ->" + answer)
         return
     # print(relationship)

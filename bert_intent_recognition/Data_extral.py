@@ -212,7 +212,7 @@ def deal_data(path, sheet_name):
 
     data = []
     Total_eneity = []
-    chapters = [1,2,3,4,5,8,9,10,11,12,13,14,15]
+    chapters = [1,2,3,4,5,7,8,9,10,11,12,13,14,15]
 
     for i in chapters:
         full_path = path + str(i)+'.xlsx'
@@ -284,7 +284,7 @@ if __name__ == '__main__':
     if not os.path.exists("checkpoint1"):
         os.mkdir('checkpoint1')
 
-    path = "../Concepts/"
+    path = "./Data/"
     sheet_name = "Q&A"
 
     data1, eneity = deal_data(path, sheet_name)
