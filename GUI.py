@@ -72,7 +72,7 @@ e = Entry(root, bg="#2C3E50", fg=TEXT_COLOR, font=FONT, width=65)
 e.grid(row=2, column=0)
 send = Button(root, text="Send", font=FONT_BOLD, bg=BG_GRAY,command=send).grid(row=2, column=1)
 
-photo = Image.open(r'C:\Users\86137\Desktop\R.jpg')
+photo = Image.open('./R.jpg')
 photo = photo.resize((400,500))
 photo = ImageTk.PhotoImage(photo)
 label = Label(image=photo)
